@@ -80,4 +80,46 @@ public class Lista {
         }
     }
 
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public boolean InsertarDespues(String ref, String dato) {
+        if (Vacia()) return false;
+        Nodo aux = Inicio;
+        do {
+            if (aux.getDato().equals(ref)) {
+                Nodo nuevo = new Nodo(dato, aux.getSiguiente());
+                aux.setSiguiente(nuevo);
+                if (aux == Fin) Fin = nuevo; // sigue apuntando a Inicio
+                cantidad++;
+                return true;
+            }
+            aux = aux.getSiguiente();
+        } while (aux != Inicio);
+        return false;
+    }
+
+    // Elimina la primera aparición del dato manteniendo Fin -> Inicio
+    public boolean EliminarDato(String dato) {
+        if (Vacia()) return false;
+        Nodo ant = Fin, act = Inicio;
+        do {
+            if (act.getDato().equals(dato)) {
+                if (Inicio == Fin) {
+                    Inicio = Fin = null;
+                } else {
+                    ant.setSiguiente(act.getSiguiente());
+                    if (act == Inicio) Inicio = act.getSiguiente();
+                    if (act == Fin) Fin = ant;
+                }
+                cantidad--;
+                return true;
+            }
+            ant = act;
+            act = act.getSiguiente();
+        } while (act != Inicio);
+        return false;
+    }
 }

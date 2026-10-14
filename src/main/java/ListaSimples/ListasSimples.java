@@ -380,4 +380,19 @@ public class ListasSimples {
     public void setPrimero(NodoSimple primero) {
         this.primero = primero;
     }
+
+    // ===================== INVERSIÓN =====================
+
+    // Reconecta cada puntero hacia atrás en una sola pasada O(n), sin crear nodos
+    public void Invertir() {
+        NodoSimple anterior = null;
+        NodoSimple actual = this.primero;
+        while (actual != null) {
+            NodoSimple siguiente = actual.getSiguiente();
+            actual.setSiguiente(anterior);
+            anterior = actual;
+            actual = siguiente;
+        }
+        this.primero = anterior;
+    }
 }

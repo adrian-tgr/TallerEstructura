@@ -46,7 +46,7 @@ public class Main {
                     if (miPila.Vacia()) {
                         System.out.println("-> La pila está vacía, no hay cima.");
                     } else {
-                        System.out.println("-> El elemento en la cima es: [" + miPila.Mostrar() + "]");
+                        System.out.println("-> El elemento en la cima es: [" + miPila.Peek() + "]");
                     }
                     break;
                 case 4:

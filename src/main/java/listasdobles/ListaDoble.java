@@ -429,4 +429,20 @@ public class ListaDoble {
     public void setUltimo(NodoDoble ultimo) {
         this.ultimo = ultimo;
     }
+
+    // ===================== INVERSIÓN =====================
+
+    // Intercambia anterior/siguiente en cada nodo y luego primero/ultimo. O(n)
+    public void Invertir() {
+        NodoDoble actual = this.primero;
+        while (actual != null) {
+            NodoDoble siguiente = actual.getSiguiente();
+            actual.setSiguiente(actual.getAnterior());
+            actual.setAnterior(siguiente);
+            actual = siguiente;
+        }
+        NodoDoble temp = this.primero;
+        this.primero = this.ultimo;
+        this.ultimo = temp;
+    }
 }

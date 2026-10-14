@@ -47,4 +47,8 @@ public class Pila {
         this.cima = primero;
     }
 
+
+    public String Peek() { //Top: solo la cima, sin extraerla
+        return Vacia() ? null : cima.getDato();
+    }
 }
