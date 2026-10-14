@@ -36,7 +36,7 @@ public class MenuPrincipal {
                 case 4: menuPila(); break;
                 case 5: menuCola(); break;
                 case 6: menuMulti(); break;
-                case 0: System.out.println("Hasta luego"); break;
+                case 0: System.out.println("Adios"); break;
                 default: System.out.println("Opcion invalida");
             }
         } while (op != 0);
@@ -191,7 +191,7 @@ public class MenuPrincipal {
                 case 0: break;
                 default: System.out.println("Opcion invalida");
             }
-            if (!ok) System.out.println("Operacion no realizada (no existe o esta duplicado)");
+            if (!ok) System.out.println("Operacion no realizada(Inexistente o duplicado");
         } while (op != 0);
     }
 }

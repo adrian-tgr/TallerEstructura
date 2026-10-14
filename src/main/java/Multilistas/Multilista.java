@@ -1,9 +1,5 @@
 package Multilistas;
 
-/**
- * Multilista: lista principal de categorías; cada categoría tiene su propia
- * sublista enlazada de elementos (dos niveles de enlaces).
- */
 public class Multilista {
 
     private static class Sub {
